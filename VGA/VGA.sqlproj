@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>VGA</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{5ecd6f75-6e34-4bac-aa9b-6186cca9dc8c}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>VGA</RootNamespace>
+    <AssemblyName>VGA</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="stg\" />
+    <Folder Include="stg\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dwh\" />
+    <Folder Include="dwh\Views\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="stg\Tables\VrijeTaakTemplate.sql" />
+    <Build Include="stg\Tables\TemplateType.sql" />
+    <Build Include="stg\Tables\Schadelocatie.sql" />
+    <Build Include="stg\Tables\SchadeobjectType.sql" />
+    <Build Include="stg\Tables\SchadeobjectMelding.sql" />
+    <Build Include="stg\Tables\SchadeObjectKlant.sql" />
+    <Build Include="stg\Tables\SchadelocatieOpSchadeobject.sql" />
+    <Build Include="stg\Tables\HoofdDossier.sql" />
+    <Build Include="stg\Tables\Correspondentie.sql" />
+    <Build Include="dbo\Tables\Datum.sql" />
+    <Build Include="dbo\Tables\DraaiDatum.sql" />
+    <Build Include="stg\Tables\Gebeurtenis.sql" />
+    <Build Include="stg\Tables\Mijlpaal.sql" />
+    <Build Include="stg\Tables\MijlpaalType.sql" />
+    <Build Include="stg\Tables\MijlpaalStatus.sql" />
+    <Build Include="dbo\Tables\CollectionsDossier.sql" />
+    <Build Include="dbo\Tables\CollectionFails.sql" />
+    <Build Include="dbo\Tables\CollectionsHoofdDossier.sql" />
+    <Build Include="stg\Tables\Personeelslid.sql" />
+    <Build Include="stg\Tables\Collectiviteit.sql" />
+    <Build Include="stg\Tables\Klant.sql" />
+    <Build Include="stg\Tables\Relatie.sql" />
+    <Build Include="stg\Tables\Dossier.sql" />
+    <Build Include="stg\Tables\DossierProces.sql" />
+    <Build Include="stg\Tables\DossierTaak.sql" />
+    <Build Include="dbo\Tables\Collections.sql" />
+    <Build Include="stg\Tables\Account.sql" />
+    <Build Include="stg\Tables\Melding.sql" />
+    <Build Include="stg\Tables\MeldingProces.sql" />
+    <Build Include="stg\Tables\MeldingTaak.sql" />
+    <Build Include="stg\Tables\Schadebedrag.sql" />
+    <Build Include="stg\Tables\BetrokkeneType.sql" />
+    <Build Include="stg\Tables\DossierBetrokkene.sql" />
+    <Build Include="stg\Tables\MeldingBetrokkene.sql" />
+    <Build Include="stg\Tables\TegenpartijType.sql" />
+    <Build Include="stg\Tables\DekkingCode.sql" />
+    <Build Include="stg\Tables\DekkingDetail.sql" />
+    <Build Include="stg\Tables\Polis.sql" />
+    <Build Include="stg\Tables\PolisDetail.sql" />
+    <Build Include="stg\Tables\PolisStamdata.sql" />
+    <Build Include="stg\Tables\Polisblad.sql" />
+    <Build Include="stg\Tables\Polisdocument.sql" />
+    <Build Include="stg\Tables\VerdelingDetail.sql" />
+    <Build Include="stg\Tables\BetalingOntvangstCode.sql" />
+    <Build Include="stg\Tables\Boeking.sql" />
+    <Build Include="stg\Tables\BoekingType.sql" />
+    <Build Include="stg\Tables\Boekingsregel.sql" />
+    <Build Include="stg\Tables\Dekkingsregel.sql" />
+    <Build Include="stg\Tables\EigenRisicoDepot.sql" />
+    <Build Include="stg\Tables\Correspondentieproces.sql" />
+    <Build Include="stg\Tables\Correspondentietaak.sql" />
+    <Build Include="stg\Tables\Documentsoort.sql" />
+    <Build Include="stg\Tables\BeschadigdObject.sql" />
+    <Build Include="stg\Tables\Hoofdoorzaak.sql" />
+    <Build Include="stg\Tables\SchadeOorzaak.sql" />
+    <Build Include="stg\Tables\Schadesoort.sql" />
+    <Build Include="stg\Tables\SchadesoortGroep.sql" />
+    <Build Include="stg\Tables\Hoofdbranche.sql" />
+    <Build Include="stg\Tables\HerverzekeringsContract.sql" />
+    <Build Include="stg\Tables\Herverzekering_Sub.sql" />
+    <Build Include="stg\Tables\TaskTemplate.sql" />
+    <Build Include="dwh\Views\vw_FACT_SchadeDossiers.sql" />
+    <Build Include="dwh\Views\vw_FACT_Taken.sql" />
+    <Build Include="dwh\Views\vw_DIM_HoofdDossier.sql" />
+    <Build Include="dwh\Views\vw_DIM_Melding.sql" />
+    <Build Include="dwh\Views\vw_DIM_Medewerker.sql" />
+    <Build Include="dwh\Views\vw_DIM_Polis.sql" />
+    <Build Include="dwh\Views\vw_DIM_HoofdBranche.sql" />
+    <Build Include="dwh\Views\vw_FACT_SchadeBedragen.sql" />
+    <Build Include="dwh\Views\vw_DIM_Taak.sql" />
+    <Build Include="dbo\Views\vw_DIM_Dossier.sql" />
+    <Build Include="dwh\Views\vw_DIM_Klant.sql" />
+    <Build Include="dwh\Views\vw_DIM_Datum.sql" />
+    <Build Include="dbo\Stored Procedures\Truncate_Stage.sql" />
+    <Build Include="dbo\Stored Procedures\sp_VulDatumTabel.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DraaiDatum.sql" />
+    <Build Include="dbo\Stored Procedures\Drop_Stage.sql" />
+    <Build Include="dbo\Stored Procedures\fail.sql" />
+    <Build Include="Security\dwh.sql" />
+    <Build Include="Security\stg.sql" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,4 @@
+﻿CREATE PROCEDURE dbo.sp_DraaiDatum AS 
+TRUNCATE TABLE dbo.DraaiDatum;
+INSERT INTO dbo.DraaiDatum VALUES
+(GETDATE())

@@ -1,0 +1,26 @@
+﻿CREATE TABLE [stg].[Klant] (
+    [ID]                              BIGINT         NULL,
+    [Naam]                            NVARCHAR (MAX) NULL,
+    [Adres]                           NVARCHAR (MAX) NULL,
+    [Plaats]                          NVARCHAR (MAX) NULL,
+    [Telefoonnummer]                  NVARCHAR (MAX) NULL,
+    [Email]                           NVARCHAR (MAX) NULL,
+    [Website]                         NVARCHAR (MAX) NULL,
+    [ToonKlantref1]                   BIT            NULL,
+    [LabelKlantref1]                  NVARCHAR (MAX) NULL,
+    [ToonKlantref2]                   BIT            NULL,
+    [LabelKlantref2]                  NVARCHAR (MAX) NULL,
+    [HeeftEigenRisicoDepot]           BIT            NULL,
+    [Postcode]                        NVARCHAR (MAX) NULL,
+    [IsBuitenland]                    BIT            NULL,
+    [PostcodeBuitenland]              NVARCHAR (MAX) NULL,
+    [LandBuitenland]                  NVARCHAR (MAX) NULL,
+    [PasCollectiviteitenToe]          BIT            NULL,
+    [MagBetalingsReferentieAanpassen] BIT            NULL,
+    [Emailfunctionaliteit]            BIT            NULL,
+    [Routecode]                       BIT            NULL,
+    [MeldingDuplicaatCheckUitvoeren]  BIT            NULL,
+    [Klant_Betrokkene]                BIGINT         NULL,
+    [Klant_Depot]                     BIGINT         NULL
+);
+

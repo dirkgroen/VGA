@@ -1,0 +1,27 @@
+﻿CREATE TABLE [stg].[Dossier] (
+    [ID]                                    BIGINT         NULL,
+    [DossierNummer]                         NVARCHAR (MAX) NULL,
+    [DossierVolgnummer]                     BIGINT         NULL,
+    [Status]                                NVARCHAR (MAX) NULL,
+    [IsSubdossier]                          BIT            NULL,
+    [ToonAlleBoekingen]                     BIT            NULL,
+    [HeeftMelding]                          BIT            NULL,
+    [BehandelaarKeuze]                      NVARCHAR (MAX) NULL,
+    [HeeftPolis]                            BIT            NULL,
+    [AndereCoordinator]                     BIT            NULL,
+    [IsOpenDossier]                         BIT            NULL,
+    [isVerhaalZichtbaar]                    BIT            NULL,
+    [fromCommunicatieDossier]               BIT            NULL,
+    [Zoekveld]                              NVARCHAR (MAX) NULL,
+    [isGeanonimiseerd]                      BIT            NULL,
+    [Dossier_DossierProces]                 BIGINT         NULL,
+    [Dossier_HoofdDossier]                  BIGINT         NULL,
+    [BronDossier_DoelDossier]               BIGINT         NULL,
+    [Dossier_SubDossier]                    BIGINT         NULL,
+    [Dossier_Klant]                         BIGINT         NULL,
+    [Dossier_Account_Behandelaar]           BIGINT         NULL,
+    [Dossier_Account_Coordinator]           BIGINT         NULL,
+    [Dossier_DossierBetrokkene_Tegenpartij] BIGINT         NULL,
+    [Dossier_DossierBetrokkene_Verzekerde]  BIGINT         NULL
+);
+
